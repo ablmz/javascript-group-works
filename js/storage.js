@@ -1,6 +1,7 @@
 /**
  * SAVE LIKED PRODUCTS
- * Select all of the like buttons, listen to the click element on every "like-btn" and the save the key of the "like-btn" to the localStorage.
+ * Select all of the like buttons, listen to the click element on every
+ * "like-btn" and the save the key of the "like-btn" to the localStorage.
  * Add the class "liked" if the button was clicked.
  * Check on reload if data is stored and add the liked class again
  * 
