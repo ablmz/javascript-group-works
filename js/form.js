@@ -11,4 +11,38 @@
  */
 
 
- document.addEventListener("support-form").
+ var submitListener=document.getElementById("support-form");
+ submitListener.addEventListener("onsubmit", validation);
+ 
+function validation(){
+    if (submitListener.privacy.value !==0){
+        if (submitListener.fullname.value !==0){
+            if (submitListener.number.value !==0){
+                if (document.forms[0].fullname.value !==0){
+                    if (document.forms.email.value !==0){
+    
+                        xhttp.open("POST", "https://hsh.blnq.dev/javascript-basics/form-fetch.php", true);
+                        xhttp.send();
+                    } else{ error;
+                    
+
+                    }
+            
+                }
+            }
+        }
+    }
+}
+
+function error(input, message) {
+    input.className = 'error'; // show the error message
+    const error = input.previousElementSibling;
+    error.innerText = message;
+    return false;
+
+    form input.error {
+        border-color: "border-red-500"
+    }
+
+    const error = input.previousElementSibling;
+error.innerText = message;
