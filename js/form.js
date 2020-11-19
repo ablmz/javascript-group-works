@@ -10,39 +10,26 @@
  * 
  */
 
-
- var submitListener=document.getElementById("support-form");
- submitListener.addEventListener("onsubmit", validation);
+var submitListener=document.getElementById("support-form");
+submitListener.addEventListener("submit", validation);
  
-function validation(){
-    if (submitListener.privacy.value !==0){
-        if (submitListener.fullname.value !==0){
-            if (submitListener.number.value !==0){
-                if (document.forms[0].fullname.value !==0){
-                    if (document.forms.email.value !==0){
+var cars = ["input-fullname", "input-number", "input-email", "input-message"];
+
+function validation(event){
+    event.preventDefault();
+    console.log(event);
     
-                        xhttp.open("POST", "https://hsh.blnq.dev/javascript-basics/form-fetch.php", true);
-                        xhttp.send();
-                    } else{ error;
-                    
-
-                    }
-            
-                }
+    if (document.getElementById("input-privacy").checked !== true) {
+        alert("Checkbox must be clicked");
+    }else{
+        for (var i in cars) {
+            if (document.cars[i].checkValidity()) {
+                xhttp.open("POST", "https://hsh.blnq.dev/javascript-basics/form-fetch.php", true);
+                xhttp.send();
+            }else{
+                document.getElementById("cars[i]").classList.toggle("border-red-500");
+                alert("Alle Felder müssen ausgefüllt werden")
             }
-        }
+            }
+      }
     }
-}
-
-function error(input, message) {
-    input.className = 'error'; // show the error message
-    const error = input.previousElementSibling;
-    error.innerText = message;
-    return false;
-
-    form input.error {
-        border-color: "border-red-500"
-    }
-
-    const error = input.previousElementSibling;
-error.innerText = message;
