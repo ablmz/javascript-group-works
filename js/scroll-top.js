@@ -7,10 +7,27 @@
  * scroll the page all the way up to the start
  * 
  */
+var scrollbtn=document.querySelector(".visible");
+scrollbtn.style.display= "none";
 
-var returnBtn = document.getElementById("return-to-top");
+var docElement= document.documentElement;
 
-if (){
-.classList.add("visible")
+function buttonshow(){
+    var scrollTotal=docElement.scrollHeight - docElement.clientHeight;
+    if ((docElement.scrollTop /scrollTotal) > 0.10){
+        scrollbtn.style.display="block";   
+    } else{
+        scrollbtn.style.display= "none";
+    }
+var btnPercent = 100*docElement.scrollTop /scrollTotal;
+scrollbtn.textContent="%"+btnPercent.toFixed(0);
+}
+
+document.addEventListener("scroll", buttonshow);
+scrollbtn.addEventListener("click",scrolltop);
+
+function scrolltop(){
+   console.log("es funktioniert")
+    docElement.scrollTo({top:0, behavior:"smooth"})
 }
 
