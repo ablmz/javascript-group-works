@@ -9,27 +9,33 @@
  * https://github.com/axios/axios
  * 
  */
-
-var submitListener=document.getElementById("support-form");
-submitListener.addEventListener("submit", validation);
- 
-var cars = ["input-fullname", "input-number", "input-email", "input-message"];
-
-function validation(event){
+document.getElementById('support-form').addEventListener('submit', function validation(event) {
+    console.log("Deneme");
     event.preventDefault();
-    console.log(event);
-    
-    if (document.getElementById("input-privacy").checked !== true) {
-        alert("Checkbox must be clicked");
-    }else{
-        for (var i in cars) {
-            if (document.cars[i].checkValidity()) {
-                xhttp.open("POST", "https://hsh.blnq.dev/javascript-basics/form-fetch.php", true);
-                xhttp.send();
-            }else{
-                document.getElementById("cars[i]").classList.toggle("border-red-500");
-                alert("Alle Felder müssen ausgefüllt werden")
-            }
-            }
-      }
+
+    const formData = new FormData(event.target);
+
+    for (var pair of formData.entries()) {
+        console.log(pair);
+        if (pair == "") {
+            document.querySelector("[id="+pair+"]").classList.add("border-red-500");
+        }else{
+            document.querySelector("[id="+pair+"]").classList.remove("border-red-500");
+        }
     }
+    if (!document.getElementById("input-privacy").checked){
+        alert("Checkbox must be clicked...");
+        return false; //formu göndermemesi icin.
+    }else{
+        const request = new XMLHttpRequest();
+        console.log(request);
+        request.open("POST", "https://hsh.blnq.dev/javascript-basics/form-fetch.php");
+        request.onreadystatechange = function () {
+            if (request.readyState == XMLHttpRequest.DONE) {
+            console.log(request.responseText);
+            request.send(formData);
+                }
+            }
+        } 
+
+});  

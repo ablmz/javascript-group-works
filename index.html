@@ -17,6 +17,7 @@
     <link href="./css/libs/tailwind.min.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
   </head>
 
@@ -276,7 +277,7 @@
             <input type="text" name="fullname" id="input-fullname" placeholder="Name" class="border border-red-500 p-2  w-1/2">
             <input type="tel" name="number" id="input-number" placeholder="Number" class="border p-2 w-1/2">
         </div>
-        <input type="email" name="email" id="input-email" placeholder="Email" class="border p-2 w-full mt-3">
+        <input type="email" name="email" id="input-email" placeholder="Email" class="border p-2 w-full mt-3" >
         <textarea name="message" id="input-message" cols="10" rows="3" placeholder="Message…" class="border p-2 mt-3 w-full"></textarea>
         <p class="font-bold text-sm mt-3">GDPR Agreement</p>
         <div class="flex items-baseline space-x-2 mt-2">
@@ -311,9 +312,10 @@
       </div>
     </footer>
 
-    <button id="return-to-top" class="visible"><i class="icon-chevron-up"></i></button>
+    <button id="return-to-top" class="hidden"><i class="icon-chevron-up"></i></button>
 
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="./js/form.js"></script>
     <script src="./js/swiper.js"></script>
     <script src="./js/menu.js"></script>

@@ -7,3 +7,10 @@
  * scroll the page all the way up to the start
  * 
  */
+
+var returnBtn = document.getElementById("return-to-top");
+
+if (){
+.classList.add("visible")
+}
+
